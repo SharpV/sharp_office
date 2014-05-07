@@ -19,7 +19,7 @@ module SharpOffice
 
       #File.delete(tmp_file_path)
 
-      {status: 'ok', pdf_path: pdf_path, swf_path: swf_path, cover_path: cover_path}
+      {:status=> 'ok', :pdf_path=> pdf_path, :swf_path=> swf_path, :cover_path=> cover_path}
     end
 
     protected
