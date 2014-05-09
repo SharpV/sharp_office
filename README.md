@@ -48,15 +48,11 @@ sudo apt-get install imagemagick libmagickcore-dev gs
 
 Add this line to your application's Gemfile:
 
-    gem 'sharp_office'
+    gem build sharp_office.gemspec
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sharp_office
+    $ gem install ./sharp_office-1.0.1.gem
 
 ## Usage
 
