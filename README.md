@@ -35,7 +35,7 @@ make[1]: *** [install] 错误 1
 ```　 
 sudo apt-get install python-software-properties
 sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
-
+sudo apt-get install libreoffice
 ```
 
 ### ImageMagick
