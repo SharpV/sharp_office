@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sharp_office/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "sharp_office"
+  gem.name          = "sharp_office_bruce"
   gem.version       = SharpOffice::VERSION
-  gem.authors       = ["sharp"]
-  gem.email         = ["liu19850701@gmail.com"]
+  gem.authors       = ["heimirror"]
+  gem.email         = ["heimirror@126.com"]
   gem.description   = %q{Convert office document to pdf and swf}
   gem.summary       = %q{Convert office document to pdf and swf}
-  gem.homepage      = "https://github.com/SharpV/sharp_office"
+  gem.homepage      = "https://github.com/brucewu/sharp_office"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
