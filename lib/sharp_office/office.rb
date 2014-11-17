@@ -8,6 +8,7 @@ module SharpOffice
     include Singleton
 
     def start(path, options)
+      @options = options
       @path = File.expand_path(path)
 
       system_or_exit(convert_to_pdf) unless options[:ignore_pdf]
@@ -39,7 +40,7 @@ module SharpOffice
     end
 
     def pdf_path
-      if options[:ignore_pdf]
+      if @options[:ignore_pdf]
         return @path if @path.end_with?('pdf')
       end
       @path.gsub('.', '-').to_s+'.pdf'
@@ -47,12 +48,12 @@ module SharpOffice
     end
 
     def cover_path
-      return '' if options[:ignore_cover]
+      return '' if @options[:ignore_cover]
       @path.gsub('.', '-').to_s+'.png'
     end
 
     def swf_path
-      return '' if options[:ignore_swf]
+      return '' if @options[:ignore_swf]
       @path.gsub('.', '-').to_s+'.swf'
     end
 
