@@ -32,7 +32,9 @@ module SharpOffice
     end
 
     def convert_to_swf
-      "pdf2swf #{pdf_path} #{swf_path}"
+      cmd_param = []
+      cmd_param << "-p #{@options[:page]}" if @options[:page]
+      "pdf2swf #{pdf_path} #{swf_path} #{cmd_param.join(' ')}"
     end
 
     def convert_to_cover
