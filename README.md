@@ -1,25 +1,42 @@
 ## SharpOffice
 
 [![Build Status](https://travis-ci.org/SharpV/sharp_office.png?branch=master)](https://travis-ci.org/SharpV/sharp_office)
+fork from https://github.com/sharp/sharp_office
 
 ## Requirements
 
 ### Swftools
 
 ```
+#不建议使用这种方法
 sudo add-apt-repository ppa:guilhem-fr/swftools
 sudo apt-get update
 sudo apt-get install swftools
 ```
-
-on download http://218.108.192.202/1Q2W3E4R5T6Y7U8I9O0P1Z2X3C4V5B/www.swftools.org/swftools-2013-04-09-1007.tar.gz and make it yourself.
+make it yourself
+download:  http://www.swftools.org/download.html
+```
+tar -zvxf swftools-0.x.x.tar
+cd swftools-0.x.x
+./configure
+make 
+make install
+```
+可能会报错
+```
+rm：无效选项 -- o
+Try 'rm --help' for more information.
+make[1]: *** [install] 错误 1
+```
+编辑 swfs/Makefile 和 swfs/Makefile.in两个文件
+找到 rm 命令，去掉后面的 -o -L 保存，再次install即可
 
 ### LibreOffice https://wiki.ubuntu.com/LibreOffice
 
 ```　 
 sudo apt-get install python-software-properties
 sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
-
+sudo apt-get install libreoffice
 ```
 
 ### ImageMagick
@@ -32,15 +49,11 @@ sudo apt-get install imagemagick libmagickcore-dev gs
 
 Add this line to your application's Gemfile:
 
-    gem 'sharp_office'
+    gem build sharp_office.gemspec
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sharp_office
+    $ gem install ./sharp_office-1.0.1.gem
 
 ## Usage
 
